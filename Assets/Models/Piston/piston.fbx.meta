@@ -1,0 +1,320 @@
+fileFormatVersion: 2
+guid: 39db9ec6436dbbf42adf23434a37a4d1
+timeCreated: 1451925590
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Base
+    100002: Base_end
+    100004: Extender_Lower
+    100006: Extender_Lower_end
+    100008: Extender_Upper
+    100010: Extender_Upper_end
+    100012: Mesh
+    100014: Piston
+    100016: //RootNode
+    400000: Base
+    400002: Base_end
+    400004: Extender_Lower
+    400006: Extender_Lower_end
+    400008: Extender_Upper
+    400010: Extender_Upper_end
+    400012: Mesh
+    400014: Piston
+    400016: //RootNode
+    4300000: Mesh
+    7400000: Extending
+    7400002: Extended
+    7400004: Rectracting
+    7400006: Rectracted
+    7400008: Rectracting_Rare
+    7400010: Piston|Extended
+    7400012: Piston|Extending
+    7400014: Piston|Rectracted
+    7400016: Piston|Rectracting
+    7400018: Piston|Rectracting_Rare
+    9500000: //RootNode
+    13700000: Mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Extending
+      takeName: Extending
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Piston
+        weight: 1
+      - path: Piston/Base
+        weight: 1
+      - path: Piston/Base/Base_end
+        weight: 1
+      - path: Piston/Extender_Lower
+        weight: 1
+      - path: Piston/Extender_Lower/Extender_Lower_end
+        weight: 1
+      - path: Piston/Extender_Upper
+        weight: 1
+      - path: Piston/Extender_Upper/Extender_Upper_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Extended
+      takeName: Extended
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Piston
+        weight: 1
+      - path: Piston/Base
+        weight: 1
+      - path: Piston/Base/Base_end
+        weight: 1
+      - path: Piston/Extender_Lower
+        weight: 1
+      - path: Piston/Extender_Lower/Extender_Lower_end
+        weight: 1
+      - path: Piston/Extender_Upper
+        weight: 1
+      - path: Piston/Extender_Upper/Extender_Upper_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Rectracting
+      takeName: Rectracting
+      firstFrame: 0
+      lastFrame: 13
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Piston
+        weight: 1
+      - path: Piston/Base
+        weight: 1
+      - path: Piston/Base/Base_end
+        weight: 1
+      - path: Piston/Extender_Lower
+        weight: 1
+      - path: Piston/Extender_Lower/Extender_Lower_end
+        weight: 1
+      - path: Piston/Extender_Upper
+        weight: 1
+      - path: Piston/Extender_Upper/Extender_Upper_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Rectracted
+      takeName: Rectracted
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Piston
+        weight: 1
+      - path: Piston/Base
+        weight: 1
+      - path: Piston/Base/Base_end
+        weight: 1
+      - path: Piston/Extender_Lower
+        weight: 1
+      - path: Piston/Extender_Lower/Extender_Lower_end
+        weight: 1
+      - path: Piston/Extender_Upper
+        weight: 1
+      - path: Piston/Extender_Upper/Extender_Upper_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Rectracting_Rare
+      takeName: Rectracting_Rare.001
+      firstFrame: 0
+      lastFrame: 27
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Piston
+        weight: 1
+      - path: Piston/Base
+        weight: 1
+      - path: Piston/Base/Base_end
+        weight: 1
+      - path: Piston/Extender_Lower
+        weight: 1
+      - path: Piston/Extender_Lower/Extender_Lower_end
+        weight: 1
+      - path: Piston/Extender_Upper
+        weight: 1
+      - path: Piston/Extender_Upper/Extender_Upper_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
