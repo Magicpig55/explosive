@@ -4,6 +4,7 @@ using System.Collections;
 public class WinConditions : MonoBehaviour {
 	
 	public Goal[] goals;
+	public bool Won;
 
 	// Update is called once per frame
 	void Update () {
@@ -12,7 +13,9 @@ public class WinConditions : MonoBehaviour {
 			if(!goal.ObjectInGoal)
 				win = false;
 		}
-		if (win && goals.Length > 0)
+		if (win && goals.Length > 0 && Won != true) {
 			Debug.Log ("Win!");
+			Won = true;
+		}
 	}
 }

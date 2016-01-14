@@ -4,18 +4,12 @@ using System.Collections;
 public class Spawner : MonoBehaviour {
 
 	GameObject Selected = null;
-	Shader SelectedShader = null;
+	Material SelectedMaterial = null;
 
 	
 	public GameObject[] SpawnedPrefabs;
-	public Shader HighlightShader;
+	public Material HighlightMaterial;
 	public int SpawnIndex = 0;
-
-
-	// Use this for initialization
-	void Start () {
-		
-	}
 
 	void Update() {
 		RaycastHit hit;
@@ -23,20 +17,29 @@ public class Spawner : MonoBehaviour {
 			GameObject obj = hit.transform.gameObject;
 			if(!(obj.CompareTag("CantSpawnOn") || obj.CompareTag("Interactable") || obj.CompareTag("GoalObject"))) {
 				if(obj != Selected && obj != null) {
+					if(Selected != null)
+						Selected.GetComponent<MeshRenderer>().material = SelectedMaterial;
 					Selected = obj;
 					MeshRenderer mr = obj.GetComponent<MeshRenderer>();
-					SelectedShader = mr.material.shader;
-					mr.material.shader = HighlightShader;
+					SelectedMaterial = mr.material;
+					mr.material = HighlightMaterial;
 				}
 			} else {
-				Selected.GetComponent<MeshRenderer>().material.shader = SelectedShader;
-				SelectedShader = null;
-				Selected = null;
+				if(Selected != null) {
+					Selected.GetComponent<MeshRenderer>().material = SelectedMaterial;
+					SelectedMaterial = null;
+					Selected = null;
+				}
 			}
 		} else {
-			Selected.GetComponent<MeshRenderer>().material.shader = SelectedShader;
-			SelectedShader = null;
-			Selected = null;
+			if(Selected != null) {
+				Selected.GetComponent<MeshRenderer>().material = SelectedMaterial;
+				SelectedMaterial = null;
+				Selected = null;
+			}
+		}
+		if (Input.GetMouseButtonDown (0) && Selected != null) {
+			Instantiate(SpawnedPrefabs[SpawnIndex], Selected.transform.position + (Vector3.up * 3), Selected.transform.rotation);
 		}
 		if (Input.GetAxis ("Mouse ScrollWheel") > 0) {
 			SpawnIndex++;
