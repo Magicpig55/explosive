@@ -22,7 +22,9 @@ public class LevelControl : MonoBehaviour {
 	public Animator EscapeMenu;
 	public Animator LevelMenu;
 	public Animator MainMenu;
-	public bool[] LevelComplete = new bool[10];
+	public bool[] LevelComplete;
+
+	public CanvasGroup SpawnUI;
 
 	void Awake() {
 		DontDestroyOnLoad (transform.gameObject);
@@ -35,10 +37,13 @@ public class LevelControl : MonoBehaviour {
 		win = Camera.main.GetComponent<WinConditions>();
 		EscapeMenu.SetTrigger ("disable");
 		LevelMenu.SetTrigger ("disable");
-		if (level == 0)
+		if (level == 0) {
 			MainMenu.SetTrigger ("enable");
-		else 
+			SpawnUI.alpha = 0;
+		} else { 
 			MainMenu.SetTrigger ("disable");
+			SpawnUI.alpha = 1;
+		}
 		escapeMenuOpen = false;
 	}
 	void Update() {

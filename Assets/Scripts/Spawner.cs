@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour {
 
@@ -42,13 +43,19 @@ public class Spawner : MonoBehaviour {
 			Instantiate(SpawnedPrefabs[SpawnIndex], Selected.transform.position + (Vector3.up * 3), Selected.transform.rotation);
 		}
 		if (Input.GetAxis ("Mouse ScrollWheel") > 0) {
-			SpawnIndex++;
-			if(SpawnIndex >= SpawnedPrefabs.Length)
-				SpawnIndex = 0;
+			SelectRight();
 		} else if (Input.GetAxis ("Mouse ScrollWheel") < 0) {
-			SpawnIndex--;
-			if(SpawnIndex < 0)
-				SpawnIndex = SpawnedPrefabs.Length - 1;
+			SelectLeft();
 		}
+	}
+	public void SelectLeft() {
+		SpawnIndex--;
+		if(SpawnIndex < 0)
+			SpawnIndex = SpawnedPrefabs.Length - 1;
+	}
+	public void SelectRight() {
+		SpawnIndex++;
+		if(SpawnIndex >= SpawnedPrefabs.Length)
+			SpawnIndex = 0;
 	}
 }
