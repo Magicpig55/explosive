@@ -34,8 +34,7 @@ public class Launcher : Activatable {
 
 	void OnDrawGizmosSelected() {
 		Gizmos.color = Color.red;
-		Vector3 direction = transform.TransformDirection((transform.up * VForce) + (transform.forward * HForce)) * 5;
-		Gizmos.DrawRay(transform.position + (transform.up), direction);
+		Gizmos.DrawRay(transform.position + (transform.up), transform.TransformVector(new Vector3(0, VForce, HForce).normalized));
 	}
 
 	void OnTriggerEnter(Collider other) {

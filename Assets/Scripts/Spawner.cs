@@ -42,11 +42,6 @@ public class Spawner : MonoBehaviour {
 		if (Input.GetMouseButtonDown (0) && Selected != null) {
 			Instantiate(SpawnedPrefabs[SpawnIndex], Selected.transform.position + (Vector3.up * 3), Selected.transform.rotation);
 		}
-		if (Input.GetAxis ("Mouse ScrollWheel") > 0) {
-			SelectRight();
-		} else if (Input.GetAxis ("Mouse ScrollWheel") < 0) {
-			SelectLeft();
-		}
 	}
 	public void SelectLeft() {
 		SpawnIndex--;

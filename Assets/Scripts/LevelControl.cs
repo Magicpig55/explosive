@@ -24,12 +24,19 @@ public class LevelControl : MonoBehaviour {
 	public Animator MainMenu;
 	public bool[] LevelComplete;
 
-	public CanvasGroup SpawnUI;
+	public SpawnUI SpawnUI;
 
 	void Awake() {
 		DontDestroyOnLoad (transform.gameObject);
 		if (FindObjectsOfType(GetType()).Length > 1) {
 			DestroyImmediate(gameObject);
+		}
+		if (currentLevel == 0) {
+			MainMenu.SetTrigger ("enable");
+			SpawnUI.Active = false;
+		} else { 
+			MainMenu.SetTrigger ("disable");
+			SpawnUI.Active = true;
 		}
 	}
 	void OnLevelWasLoaded(int level) {
@@ -37,20 +44,22 @@ public class LevelControl : MonoBehaviour {
 		win = Camera.main.GetComponent<WinConditions>();
 		EscapeMenu.SetTrigger ("disable");
 		LevelMenu.SetTrigger ("disable");
-		if (level == 0) {
+		if (currentLevel == 0) {
 			MainMenu.SetTrigger ("enable");
-			SpawnUI.alpha = 0;
+			SpawnUI.Active = false;
 		} else { 
 			MainMenu.SetTrigger ("disable");
-			SpawnUI.alpha = 1;
+			SpawnUI.Active = true;
 		}
 		escapeMenuOpen = false;
 	}
 	void Update() {
 		if (win != null) {
 			if (win.Won) {
-				LevelComplete[currentLevel + 1] = true;
-				Application.LoadLevel (currentLevel + 1);
+				if(currentLevel < LevelComplete.Length - 1) {
+					LevelComplete[currentLevel + 1] = true;
+					Application.LoadLevel (currentLevel + 1);
+				}
 			}
 		}
 		if (Input.GetKeyDown(KeyCode.Escape) && currentLevel != 0) {
