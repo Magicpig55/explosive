@@ -1,17 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Linq;
+using UnityEngine.SceneManagement;
 public class LevelControl : MonoBehaviour {
 
 	public void ChangeLevel(string scene) {
-		Application.LoadLevel (scene);
-	}
-	public void ChangeLevel(int scene) {
-		Application.LoadLevel (scene);
-	}
-	public void Restart() {
-		Application.LoadLevel (currentLevel);
-		escapeMenuOpen = false;
+#if UNITY_5_3
+        SceneManager.LoadScene(scene);
+#else
+        Application.LoadLevel (scene);
+#endif
+    }
+    public void ChangeLevel(int scene) {
+#if UNITY_5_3
+        SceneManager.LoadScene(scene);
+#else
+        Application.LoadLevel (scene);
+#endif
+    }
+    public void Restart() {
+#if UNITY_5_3
+        SceneManager.LoadScene(currentLevel);
+        Debug.Log("Using Unity 5.3");
+#else
+        Application.LoadLevel (currentLevel);
+        Debug.Log("Using older version of Unity");
+#endif
+        escapeMenuOpen = false;
 		EscapeMenu.SetTrigger ("disable");
 	}
 
@@ -58,7 +73,7 @@ public class LevelControl : MonoBehaviour {
 			if (win.Won) {
 				if(currentLevel < LevelComplete.Length - 1) {
 					LevelComplete[currentLevel + 1] = true;
-					Application.LoadLevel (currentLevel + 1);
+                    ChangeLevel (currentLevel + 1);
 				}
 			}
 		}
