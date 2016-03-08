@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Linq;
+#if UNITY_5_3
 using UnityEngine.SceneManagement;
+#endif
 public class LevelControl : MonoBehaviour {
 
 	public void ChangeLevel(string scene) {
