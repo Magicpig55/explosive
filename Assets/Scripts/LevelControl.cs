@@ -44,16 +44,20 @@ public class LevelControl : MonoBehaviour {
 	public SpawnUI SpawnUI;
 
 	void Awake() {
+		Debug.Log ("LevelControl checking for other instances");
 		DontDestroyOnLoad (transform.gameObject);
-		if (FindObjectsOfType(GetType()).Length > 1) {
-			DestroyImmediate(gameObject);
-		}
-		if (currentLevel == 0) {
-			MainMenu.SetTrigger ("enable");
-			SpawnUI.Active = false;
-		} else { 
-			MainMenu.SetTrigger ("disable");
-			SpawnUI.Active = true;
+		if (FindObjectsOfType (GetType ()).Length > 1) {
+			Debug.Log ("LevelControl found other instance, destroying...");
+			DestroyImmediate (gameObject);
+		} else {
+			Debug.Log ("No other instances found, continuing...");
+			if (currentLevel == 0) {
+				MainMenu.SetTrigger ("enable");
+				SpawnUI.Active = false;
+			} else { 
+				MainMenu.SetTrigger ("disable");
+				SpawnUI.Active = true;
+			}
 		}
 	}
 	void OnLevelWasLoaded(int level) {
@@ -73,9 +77,14 @@ public class LevelControl : MonoBehaviour {
 	void Update() {
 		if (win != null) {
 			if (win.Won) {
-				if(currentLevel < LevelComplete.Length - 1) {
-					LevelComplete[currentLevel + 1] = true;
-                    ChangeLevel (currentLevel + 1);
+				Debug.Log(string.Format("Level {0} of {1}", currentLevel, LevelComplete.Length));
+				if(currentLevel < LevelComplete.Length + 1) {
+					LevelComplete[currentLevel - 1] = true;
+					if(currentLevel == LevelComplete.Length) {
+						ChangeLevel (0);
+					} else {
+                    	ChangeLevel (currentLevel + 1);
+					}
 				}
 			}
 		}
