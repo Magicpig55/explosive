@@ -43,6 +43,8 @@ public class LevelControl : MonoBehaviour {
 
 	public SpawnUI SpawnUI;
 
+	public bool DisregardLevelComplete;
+
 	void Awake() {
 		Debug.Log ("LevelControl checking for other instances");
 		DontDestroyOnLoad (transform.gameObject);

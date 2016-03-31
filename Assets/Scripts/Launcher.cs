@@ -17,7 +17,7 @@ public class Launcher : Activatable {
 	public override void Activate() {
 		animator.SetTrigger("Activate");
 		Activated = !Activated;
-		if (Activated) {
+		if (Activated && localBody != null) {
 			localBody.velocity = new Vector3(0, 0, 0);
 			localBody.AddForce ((transform.up * VForce) + (transform.forward * HForce));
 		}
@@ -39,7 +39,8 @@ public class Launcher : Activatable {
 
 	void OnTriggerEnter(Collider other) {
 		Rigidbody rb = other.gameObject.GetComponent<Rigidbody> ();
-		other.gameObject.GetComponent<PhysicsObject>().Collide ();
+		if(other.gameObject.GetComponent<PhysicsObject>() != null)
+			other.gameObject.GetComponent<PhysicsObject>().Collide ();
 		localBody = rb;
 	}
 	void OnTriggerExit(Collider other) {

@@ -12,10 +12,12 @@ public class LevelButtonControl : MonoBehaviour {
 	void Update() {
 		text.text = string.Format ("Level {0}:{1}", Mathf.Floor ((Level - 1) / 5) + 1, ((Level - 1) % 5));
 		name = string.Format ("bt_{0}_{1}", Mathf.Floor ((Level - 1) / 5) + 1, ((Level - 1) % 5));
-		if (Level == 1) {
-			GetComponent<Button> ().interactable = true;
-		} else {
-			GetComponent<Button> ().interactable = levelControl.LevelComplete[Level - 1];
+		if (!levelControl.DisregardLevelComplete) {
+			if (Level == 1) {
+				GetComponent<Button> ().interactable = true;
+			} else {
+				GetComponent<Button> ().interactable = levelControl.LevelComplete [Level - 1];
+			}
 		}
 	}
 
