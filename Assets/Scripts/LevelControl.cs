@@ -31,6 +31,9 @@ public class LevelControl : MonoBehaviour {
         escapeMenuOpen = false;
 		EscapeMenu.SetTrigger ("disable");
 	}
+    public void Quit() {
+        Application.Quit();
+    }
 
 	private int currentLevel = 0;
 	private WinConditions win;
